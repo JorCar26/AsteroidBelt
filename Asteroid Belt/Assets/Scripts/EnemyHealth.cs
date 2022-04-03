@@ -8,33 +8,41 @@ public class EnemyHealth : MonoBehaviour
     GameObject player;
     [SerializeField]
     PlayerBaseStats pBaseStats;
-    private void Start()
+    [SerializeField]
+    GameObject enemy;
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         pBaseStats = player.GetComponent<PlayerBaseStats>();
-        eBaseStats = GetComponent<EnemyBaseStats>();
-        
-        
+        eBaseStats = enemy.GetComponent<EnemyBaseStats>();
+
+
     }
+
+    private void OnEnable()
+    {
+        eBaseStats.health = eBaseStats.maxHealth;
+    }
+
     void Update()
     {
-        if(eBaseStats.health <= 0)
+        if (eBaseStats.health <= 0)
         {
             pBaseStats.score += eBaseStats.score;
             pBaseStats.scoreIncreased = true;
-            Destroy(this.gameObject,0f);
+            gameObject.SetActive(false);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Projectile")
+        if (collision.gameObject.tag == "Projectile")
         {
             eBaseStats.health -= collision.gameObject.GetComponent<PlayerProjectile>().damage;
         }
 
-        if(collision.gameObject.tag == "Boundary")
+        if (collision.gameObject.tag == "Boundary")
         {
-            Destroy(this.gameObject, 2.0f);
+            gameObject.SetActive(false);
         }
         if (collision.gameObject.tag == "Enemy")
         {

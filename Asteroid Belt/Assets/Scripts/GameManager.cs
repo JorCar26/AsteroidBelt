@@ -17,8 +17,15 @@ public class GameManager : MonoBehaviour
     public GameObject quitButton;
     public int currentLevel;
     PlayerBaseStats pBaseStats;
-    
+
+    public bool GameRunning;
+
     EnemySpawner enemySpawner;
+
+    private void Awake()
+    {
+        GameRunning = true;
+    }
     void Start()
     {
         pBaseStats = GetComponent<PlayerBaseStats>();
@@ -26,6 +33,7 @@ public class GameManager : MonoBehaviour
         playerScore.text = "Score: " + 0;
         gameOver.text = "";
         currentLevel = 1;
+
     }
     public void updateScore(float score)
     {
@@ -37,6 +45,7 @@ public class GameManager : MonoBehaviour
         restartButton.SetActive(true);
         mainMenuButton.SetActive(true);
         quitButton.SetActive(true);
+        GameRunning = false;
     }
     public void LoseScreen()
     {
@@ -44,6 +53,8 @@ public class GameManager : MonoBehaviour
         restartButton.SetActive(true);
         mainMenuButton.SetActive(true);
         quitButton.SetActive(true);
+
+        GameRunning = false;
     }
     public void KillBoxScreen()
     {
@@ -51,6 +62,7 @@ public class GameManager : MonoBehaviour
         restartButton.SetActive(true);
         mainMenuButton.SetActive(true);
         quitButton.SetActive(true);
+        GameRunning = false;
     }
     public void MainMenu()
     {
@@ -59,7 +71,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
+
     }
     public void QuitGame()
     {
@@ -67,34 +79,33 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
-        if(currentLevel == 1)
+        if (currentLevel == 1)
         {
             levelText.text = "Level:" + currentLevel.ToString();
             if (levelAnnouncment != null)
             {
                 levelAnnouncment.text = "LEVEL 1";
             }
-            enemySpawner.waitTime = 2;
+            
         }
-        if(currentLevel == 2)
+        if (currentLevel == 2)
         {
             levelText.text = "Level:" + currentLevel.ToString();
-            enemySpawner.waitTime = 1;
+            
             if (level2Announcment != null)
             {
                 level2Announcment.gameObject.SetActive(true);
                 level2Announcment.text = "LEVEL 2";
             }
-            
+
         }
-        if(currentLevel == 3)
+        if (currentLevel == 3)
         {
             levelText.text = "Level:" + currentLevel.ToString();
-            enemySpawner.waitTime = 0.5f;
             if (level3Announcment != null)
             {
                 level3Announcment.gameObject.SetActive(true);

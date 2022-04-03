@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  maxHealth: 20
   score: 10
   damage: 50
   moveSpeed: 1
@@ -118,6 +119,7 @@ MonoBehaviour:
   eBaseStats: {fileID: 0}
   player: {fileID: 0}
   pBaseStats: {fileID: 0}
+  enemy: {fileID: 1739042452754687524}
 --- !u!114 &1739042452754687546
 MonoBehaviour:
   m_ObjectHideFlags: 0

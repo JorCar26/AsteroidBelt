@@ -5,7 +5,7 @@ ScriptsOnlyBuild:
     - EnemyBaseStats
     - EnemyHealth
     - EnemyMovement
-    - EnemySpawner
+    - EnemyPool
     - GameManager
     - HealthBar
     - HitEffect
@@ -26,10 +26,13 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -124,8 +127,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3396}
     - Class: 114
-      Script: {instanceID: 3438}
-    - Class: 114
       Script: {instanceID: 3902}
     - Class: 114
       Script: {instanceID: 3944}
@@ -143,6 +144,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4620}
     - Class: 114
       Script: {instanceID: 5474}
+    - Class: 114
+      Script: {instanceID: 17812}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -501,7 +504,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 89ac29d56b172a919d8d714cf9147850
+      Hash: 490c21f6d559ebbcd18621c3d1abf56b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyBaseStats
@@ -531,7 +534,7 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: 1fe3ae664d0aee968f020d0aad0070d6
+      Hash: 1592b81dc15f8112f81348d7798053c4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyHealth
@@ -729,7 +732,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 2a45d68ab18f01d6c4ac08a9c51f6bb7
+      Hash: d7b410d5f1a723a8ed3676996f60a6d0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -883,6 +886,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 4926f481ba9576ebe2f0fb95e6dfaa98
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyPool
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
