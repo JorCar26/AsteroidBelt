@@ -19,7 +19,7 @@ public class KillZones : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             gameManager.KillBoxScreen();
-            Time.timeScale = 0;
+            
             Destroy(collision.gameObject);
         }
     }

@@ -53,13 +53,13 @@ public class PlayerBaseStats : MonoBehaviour
         if (score >= 500)
         {
             gameManager.WinScreen();
-            Time.timeScale = 0;
+            
         }
         //Lose Condition
         if (health <= 0)
         {
             gameManager.LoseScreen();
-            Time.timeScale = 0;
+            
         }
 
     }
