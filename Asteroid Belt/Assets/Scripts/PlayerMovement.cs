@@ -18,10 +18,13 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "EnemyProjectile" || collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "Enemy")
         {
-            eBaseStats = collision.gameObject.GetComponent<EnemyBaseStats>();
-            pBaseStats.health -= eBaseStats.damage;
+            if (pBaseStats.lightShield == false && pBaseStats.strongShield == false)
+            {
+                eBaseStats = collision.gameObject.GetComponent<EnemyBaseStats>();
+                pBaseStats.health -= eBaseStats.damage;
+            }
         }
     }
 }

@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   score: 10
-  damage: 25
+  damage: 50
   moveSpeed: 1
 --- !u!114 &1739042452754687547
 MonoBehaviour:
@@ -151,7 +151,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!61 &1739042452754687551
 BoxCollider2D:
   m_ObjectHideFlags: 0

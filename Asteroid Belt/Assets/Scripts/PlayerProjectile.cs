@@ -10,6 +10,8 @@ public class PlayerProjectile : MonoBehaviour
     public float damage;
     [SerializeField]
     BoxCollider2D projectileCollider;
+    [SerializeField]
+    BoxCollider2D shieldCollider;
     void Start()
     {
         projectileCollider = GetComponent<BoxCollider2D>();
@@ -27,17 +29,6 @@ public class PlayerProjectile : MonoBehaviour
         {
             Instantiate(HitEffect, collision.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-        }
-        if(collision.gameObject.tag == "Shield")
-        {
-            projectileCollider.isTrigger = true;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Shield")
-        {
-            projectileCollider.isTrigger = false;
         }
     }
 }

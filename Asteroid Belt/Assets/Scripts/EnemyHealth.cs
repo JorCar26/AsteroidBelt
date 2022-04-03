@@ -18,11 +18,11 @@ public class EnemyHealth : MonoBehaviour
     }
     void Update()
     {
-        if(eBaseStats.health == 0)
+        if(eBaseStats.health <= 0)
         {
             pBaseStats.score += eBaseStats.score;
             pBaseStats.scoreIncreased = true;
-            Destroy(this.gameObject,.25f);
+            Destroy(this.gameObject,0f);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,23 +31,14 @@ public class EnemyHealth : MonoBehaviour
         {
             eBaseStats.health -= collision.gameObject.GetComponent<PlayerProjectile>().damage;
         }
-        if(collision.gameObject.tag == "Player")
-        {
-            if(pBaseStats.lightShield == false && pBaseStats.strongShield == false)
-            {
-                pBaseStats.health -= eBaseStats.damage;
-                pBaseStats.healthChanged = true;
-                Destroy(this.gameObject);
-            }
-            if(pBaseStats.lightShield == true || pBaseStats.strongShield == true)
-            {
-                pBaseStats.shieldStrength -= eBaseStats.damage;
-            }
-        }
 
         if(collision.gameObject.tag == "Boundary")
         {
             Destroy(this.gameObject, 2.0f);
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), collision.gameObject.GetComponent<BoxCollider2D>());
         }
     }
 }

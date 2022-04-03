@@ -16,6 +16,7 @@ ScriptsOnlyBuild:
     - PlayerShooting
     - PowerUpMovement
     - PowerUpSpawner
+    - ShieldBar
     - ShieldPowerUp
     - ShieldStats
     - ShootPowerUp
@@ -127,19 +128,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3900}
     - Class: 114
-      Script: {instanceID: 4196}
+      Script: {instanceID: 3942}
     - Class: 114
-      Script: {instanceID: 4228}
+      Script: {instanceID: 4198}
     - Class: 114
-      Script: {instanceID: 4256}
+      Script: {instanceID: 4230}
     - Class: 114
-      Script: {instanceID: 4424}
+      Script: {instanceID: 4258}
     - Class: 114
-      Script: {instanceID: 4606}
+      Script: {instanceID: 4426}
     - Class: 114
-      Script: {instanceID: 5468}
+      Script: {instanceID: 4608}
     - Class: 114
-      Script: {instanceID: 23962}
+      Script: {instanceID: 4618}
+    - Class: 114
+      Script: {instanceID: 5472}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -210,9 +213,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3394}
     - Class: 114
-      Script: {instanceID: 4734}
+      Script: {instanceID: 4738}
     - Class: 114
-      Script: {instanceID: 5110}
+      Script: {instanceID: 5114}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -336,7 +339,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: 93b64a9fdad26b027c8986a5f87eb405
+      Hash: 30cfe8bd570d3bd553970f0b918c7a69
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ShieldPowerUp
@@ -354,7 +357,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 55e8b58f65ee615ee29556a273088117
+      Hash: ccc46781aa6677923815ea95a50840f0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerProjectile
@@ -390,7 +393,7 @@ ScriptsOnlyBuild:
     className: IKManager2D
   - hash:
       serializedVersion: 2
-      Hash: 77671defc41933a3022bc4026db7e596
+      Hash: 3939b9185cd77d6b31274b0f0126c041
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerBaseStats
@@ -618,6 +621,12 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 1028c39545bcfa841aaab54121e69a47
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthBar
+  - hash:
+      serializedVersion: 2
       Hash: da4cc51a02ce84afe2cecd27cfe6997a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -762,6 +771,12 @@ ScriptsOnlyBuild:
     className: HitEffect
   - hash:
       serializedVersion: 2
+      Hash: 1028c39545bcfa841aaab54121e69a47
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ShieldBar
+  - hash:
+      serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -862,20 +877,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 1028c39545bcfa841aaab54121e69a47
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: HealthBar
-  - hash:
-      serializedVersion: 2
-      Hash: 1028c39545bcfa841aaab54121e69a47
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ShieldBar
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/GameScene.unity
-  playerPath: C:/Users/davis/Desktop/Asteroid Belt/Builds/Asteroid Belt.exe
+  playerPath: C:/Users/davis/Desktop/AsteroidBelt/Asteroid Belt/Builds/Asteroid Belt.exe

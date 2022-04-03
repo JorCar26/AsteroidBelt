@@ -18,12 +18,7 @@ public class PlayerShooting : MonoBehaviour
     public AudioSource audioSource;
     public bool fireSingle;
     public bool fireDouble;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         elapsedTime += Time.deltaTime;

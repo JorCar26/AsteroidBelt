@@ -10,6 +10,8 @@ TagManager:
   - Shield
   - GameManager
   - HealthBar
+  - ShieldBar
+  - Spawner
   layers:
   - Default
   - TransparentFX

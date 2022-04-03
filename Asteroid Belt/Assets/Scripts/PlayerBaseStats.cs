@@ -13,6 +13,7 @@ public class PlayerBaseStats : MonoBehaviour
     public bool scoreIncreased;
     public bool healthChanged;
     public GameObject healthBar;
+    public GameObject shieldBar;
     public GameObject SmallShield;
     public GameObject LargeShield;
 
@@ -30,13 +31,9 @@ public class PlayerBaseStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Update Health Bar
-        if(healthChanged == true)
-        {
-            healthBar.GetComponent<HealthBar>().SetHealth(health);
-            Debug.Log("Health Lost");
-            healthChanged = false;
-        }
+        healthBar.GetComponent<HealthBar>().SetHealth(health);
+        shieldBar.GetComponent<ShieldBar>().SetShield(shieldStrength);
+        
         //Update Score
         if (scoreIncreased == true)
         {
@@ -44,30 +41,25 @@ public class PlayerBaseStats : MonoBehaviour
             scoreIncreased = false;
         }
         //Win Condition
-        if(score >= 5000)
+        if (score >= 100 && score <= 249)
+        {
+            gameManager.currentLevel = 2;
+            
+        }
+        if(score >= 250 && score <= 499)
+        {
+            gameManager.currentLevel = 3;
+        }
+        if (score >= 500)
         {
             gameManager.WinScreen();
+            Time.timeScale = 0;
         }
         //Lose Condition
-        if(health <= 0)
+        if (health <= 0)
         {
             gameManager.LoseScreen();
-        }
-        if(shieldStrength == 25)
-        {
-            lightShield = true;
-        }
-        if(shieldStrength == 50)
-        {
-            strongShield = true;
-        }
-        if (lightShield == true)
-        {
-            SmallShield.SetActive(true);
-        }
-        if(strongShield == true)
-        {
-            LargeShield.SetActive(true);
+            Time.timeScale = 0;
         }
 
     }
